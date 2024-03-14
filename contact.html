@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - PC Store</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cont.css">
+    <style>
+        input:hover {
+            background: pink;
+            color: red;
+        }
+
+        input:focus {
+            background: lightblue;
+            color: blue;
+        }
+
+        
+    </style>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -22,37 +37,48 @@
         </nav>
     </header>
 
-    <main>
-        <h1>Contact Us</h1>
-        <!-- Contact form or contact information goes here -->
-    </main>
+    
+        <div class="wrapper">
+            <form class="form">
+                <div class="pageTitle title">Contact Us</div>
+                <div class="secondaryTitle title">Please Tell US.</div>
+                <input type="text" class="name formEntry" placeholder="Name" />
+                <input type="text" class="email formEntry" placeholder="Email" />
+                <textarea class="message formEntry" placeholder="Feedback"></textarea>
+                <input type="checkbox" class="termsConditions" value="Term">
+                <label style="color: grey" for="terms"> I Accept the <span style="color: #0e3721">Terms of Use</span> &
+                    <span style="color: #0e3721">Privacy Policy</span>.</label><br>
+                <button class="submit formEntry" onclick="thanks()">Submit</button>
+            </form>
+        </div>
 
-    <footer>
-        <div class="footer-container">
-            <div class="logo-social">
-                <img src="logo.jpeg" alt="Digimon Store">
-                <div class="social-links">
-                    <a href="https://www.youtube.com/"><img src="snapchat.png" alt="snapchat"></a>
-                    <a href="https://twitter.com/imm0hd"><img src="x.jpg" alt="x"></a>
-                    <a href="https://www.instagram.com/im.m0hd/"><img src="instagram.png" alt="Instagram"></a>
+        <footer style="margin-top: 35%;">
+            <div class="footer-container">
+                <div class="logo-social">
+                    <img src="logo.jpeg" alt="Digimon Store">
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/"><img src="snapchat.png" alt="snapchat"></a>
+                        <a href="https://twitter.com/imm0hd"><img src="x.jpg" alt="x"></a>
+                        <a href="https://www.instagram.com/im.m0hd/"><img src="instagram.png" alt="Instagram"></a>
+                    </div>
+                </div>
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                    </ul>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Info</h3>
+                    <p>Email: <a href="s139265@student.squ.edu.om">contact@digimonstore.com</a></p>
+                    <p>Phone: 79206504</p>
                 </div>
             </div>
-            <div class="quick-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                </ul>
-            </div>
-            <div class="contact-info">
-                <h3>Contact Info</h3>
-                <p>Email: <a href="s139265@student.squ.edu.om">contact@digimonstore.com</a></p>
-                <p>Phone: 79206504</p>
-            </div>
-        </div>
-    </footer>
-</body>
+        </footer>
+    </body>
+
 </html>

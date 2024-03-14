@@ -5,6 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - PC Store</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0e0c0c;
+        }
+
+        .container {
+            margin:  auto;
+            padding: 20px;
+            background-color: #b86262;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .pc-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .pc-type {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #0a0808;
+        }
+
+        .pc-type a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+
+        .pc-image {
+            max-width: 100px;
+            margin: 0 auto;
+        }
+
+        .price {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #007bff;
+        }
+
+        .add-to-cart {
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,10 +87,93 @@
         </nav>
     </header>
 
-    <main>
-        <h1>Products</h1>
-        <!-- Product listings go here -->
-    </main>
+    <div class="container mt-5" style="background-color: grey;">
+        <h1>Available PC Parts and Accessories</h1>
+        <table class="pc-table">
+            <tr>
+                <td class="pc-type">
+                    <a href="#" id="KeyLink">
+                        <img src="key.png" alt="Key" class="pc-image">
+                        <h3>Keyboard</h3>
+                        <p class="price">$59.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+                <td class="pc-type">
+                    <a href="#" id="motherboardLink">
+                        <img src="mother.png" alt="Motherboard" class="pc-image">
+                        <h3>Motherboard</h3>
+                        <p class="price">$149.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+                <td class="pc-type">
+                    <a href="#" id="coolerLink">
+                        <img src="cooler.png" alt="Cooler" class="pc-image">
+                        <h3>Cooler</h3>
+                        <p class="price">$199.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="pc-type">
+                    <a href="#" id="storageLink">
+                        <img src="storage.png" alt="Storage" class="pc-image">
+                        <h3>Storage</h3>
+                        <p class="price">$99.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+                <td class="pc-type">
+                    <a href="#" id="MonitorLink">
+                        <img src="motors.png" alt="Monitor" class="pc-image">
+                        <h3>Monitor</h3>
+                        <p class="price">$249.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+                <td class="pc-type">
+                    <a href="#" id="laptop">
+                        <img src="laptop.png" alt="laptop" class="pc-image">
+                        <h3>Laptop Gaming</h3>
+                        <p class="price">$699.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="pc-type">
+                    <a href="#" id="processerLink">
+                        <img src="processer.png" alt="processer" class="pc-image">
+                        <h3>processer</h3>
+                        <p class="price">$199.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+                <td class="pc-type">
+                    <a href="#" id="WifiLink">
+                        <img src="Wifi.jpg" alt="Wifi" class="pc-image">
+                        <h3>Wifi Adapter</h3>
+                        <p class="price">$29.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+                <td class="pc-type">
+                    <a href="#" id="graphic">
+                        <img src="graphic.png" alt="graphic" class="pc-image">
+                        <h3>graphic card </h3>
+                        <p class="price">$699.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </table>
+        <!-- Add more content as needed -->
+    </div>
+    
+    
 
     <footer>
         <div class="footer-container">
