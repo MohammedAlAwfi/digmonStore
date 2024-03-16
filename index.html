@@ -29,42 +29,57 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size:large;
+
         }
 
         dt {
             font-weight: bold;
             margin-top: 20px;
+            font-size:large;
         }
 
         dd {
             margin-left: 20px;
             margin-bottom: 20px;
+            font-size:large;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <div class="logo">
-            <a href="index.html"><img src="logo.jpeg" alt="PC Store"></a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
-                <li class="login"><a href="login.html"><img src="login.png" alt="Login"></a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="logo">
+        <a class="navbar-brand" href="index.html">
+            <img src="logo.jpeg" alt="PC Store" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+            <li class="login"><a href="login.html"><img src="login.png" alt="Login"></a></li>
+
+        </ul>
+    </nav>
+
+</header>
 
     <main>
         <h1>Welcome to PC Store</h1>
+        <div style="text-align: center;">
+        <a href="products.html"><img src="save.jpg" alt=""></a>
+    </div>
 
         <h1>Our Services</h1>
-
+<div style="padding-bottom: 18%;">
         <dl>
             <dt>Sell Items</dt>
             <dd>We offer a wide range of items for sale, including electronics, gadgets, and accessories.</dd>
@@ -77,7 +92,7 @@
             <dd>Our experienced technicians are skilled in diagnosing and fixing a variety of computer issues, from
                 software problems to hardware malfunctions.</dd>
         </dl>
-
+</div>
     </main>
 
     <footer>
