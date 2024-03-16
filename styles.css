@@ -1,4 +1,7 @@
-/* Basic styles */
+*{
+    color: black;
+}
+
 body {
     background-color: #d1f3e7;
 
@@ -10,11 +13,68 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+.login img {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px;
+    margin-left: 10px; /* Adjust the spacing between checkout and login icon */
+}
+
+/*This is for the login page*/
+.login-container {
+    background-color: #ffffff; /* Background color of the login container */
+    padding: 40px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Increased width */
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Increased margin-bottom */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px; /* Increased margin-bottom */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px; /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
 
 .logo img {
     height: 50px; /* Adjust size as needed */
@@ -44,6 +104,10 @@ footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-container {

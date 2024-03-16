@@ -24,6 +24,12 @@ body {
   ::-webkit-input-placeholder {
     font-size: 1.3em;
   }
+
+  .login img {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px;
+    margin-left: 10px; /* Adjust the spacing between checkout and login icon */
+}
   
   .title {
     display: block;
