@@ -63,17 +63,22 @@
 </head>
 
 <body>
-    <header>
+        <header>
         <div class="logo">
-            <a href="index.html"><img src="logo.jpeg" alt="Digimon Store"></a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.jpeg" alt="PC Store" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div class="collapse navbar-collapse" id="navbarNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
                 <li class="login"><a href="login.html"><img src="login.png" alt="Login"></a></li>
 
             </ul>
