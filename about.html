@@ -14,10 +14,11 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: hsl(159, 75%, 87%);
+
         }
 
-        .container {
+        .container1 {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
@@ -63,12 +64,13 @@
 </head>
 
 <body>
-        <header>
+    <header>
         <div class="logo">
             <a class="navbar-brand" href="index.html">
                 <img src="logo.jpeg" alt="PC Store" height="40">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div class="collapse navbar-collapse" id="navbarNav">
@@ -85,9 +87,11 @@
         </nav>
     </header>
     <main>
-        <div class="container">
+        <div class="container1">
             <table class="table table-striped">
-               <center> <thead style="text-align: center; font-weight: bolder; color: #5a5a5a;">About Digimon Store</thead></center>
+                <center>
+                    <thead style="text-align: center; font-weight: bolder; color: #5a5a5a;">About Digimon Store</thead>
+                </center>
                 <tbody>
                     <tr>
                         <th>Our Story</th>
@@ -150,36 +154,57 @@
                 </tbody>
 
             </table>
+                
     </main>
-
-
-    <footer>
-        <div class="footer-container">
-            <div class="logo-social">
-                <img src="logo.jpeg" alt="Digimon Store">
-                <div class="social-links">
-                    <a href="https://www.youtube.com/"><img src="snapchat.png" alt="Facebook"></a>
-                    <a href="https://twitter.com/imm0hd"><img src="x.jpg" alt="x"></a>
-                    <a href="https://www.instagram.com/im.m0hd/"><img src="instagram.png" alt="Instagram"></a>
-                </div>
-            </div>
-            <div class="quick-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                </ul>
-            </div>
-            <div class="contact-info">
-                <h3>Contact Info</h3>
-                <p>Email: <a href="mailto: s139265@student.squ.edu.om">contact@digimonstore.com</a></p>
-                <p>Phone: 79206504</p>
+    <div class="container"  style="margin-left: 27%;">
+        <div class="card bg-primary" style="padding-bottom: 20%; width:400px;  display: inline-block;">
+            <img class="card-img-top" src="location1.jpeg">
+            <div class="card-body">
+                <h4 class="card-title">Our location in Muscat</h4>
+                <div class="card-text"><input style="background-color: #333;" type="button" value="Open in Google map"></div>
             </div>
         </div>
-    </footer>
+        
+        <div class="card bg-primary" style="padding-bottom: 20%; margin-left: 5%; width:400px;   display: inline-block;">
+            <img class="card-img-top" src="location2.jpeg">
+            <div class="card-body">
+                <h4 class="card-title">Our location in Dubai</h4>
+                <div class="card-text"><input style="background-color: #333;" type="button" value="Open in Google map"></div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+        <footer>
+            <div class="footer-container">
+                <div class="logo-social">
+                    <img src="logo.jpeg" alt="Digimon Store">
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/"><img src="snapchat.png" alt="Facebook"></a>
+                        <a href="https://twitter.com/imm0hd"><img src="x.jpg" alt="x"></a>
+                        <a href="https://www.instagram.com/im.m0hd/"><img src="instagram.png" alt="Instagram"></a>
+                    </div>
+                </div>
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                    </ul>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Info</h3>
+                    <p>Email: <a href="mailto: s139265@student.squ.edu.om">contact@digimonstore.com</a></p>
+                    <p>Phone: 79206504</p>
+                </div>
+            </div>
+        </footer>
 </body>
 
 </html>
