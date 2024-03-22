@@ -14,7 +14,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+                background-color: hsl(159, 75%, 87%);
+
         }
 
         h1 {
@@ -29,72 +30,101 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            font-size:large;
+            font-size: large;
 
         }
 
         dt {
             font-weight: bold;
             margin-top: 20px;
-            font-size:large;
+            font-size: large;
         }
 
         dd {
             margin-left: 20px;
             margin-bottom: 20px;
-            font-size:large;
+            font-size: large;
+        }
+
+        .car-features {
+            margin-top: 40px;
+            background-color: #e00909;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 
 <body>
     <header>
-    <div class="logo">
-        <a class="navbar-brand" href="index.html">
-            <img src="logo.jpeg" alt="PC Store" height="40">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
-            <li class="login"><a href="login.html"><img src="login.png" alt="Login"></a></li>
+        <div class="logo">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.jpeg" alt="PC Store" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
 
-        </ul>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+                <li class="login"><a href="login.html"><img src="login.png" alt="Login"></a></li>
 
-</header>
+            </ul>
+        </nav>
 
-    <main>
+    </header>
+
+    <div>
         <h1>Welcome to PC Store</h1>
         <div style="text-align: center;">
-        <a href="products.html"><img src="save.jpg" alt=""></a>
-    </div>
+            <a href="products.html"><img src="save.jpg" alt=""></a>
+        </div>
 
         <h1>Our Services</h1>
-<div style="padding-bottom: 18%;">
-        <dl>
-            <dt>Sell Items</dt>
-            <dd>We offer a wide range of items for sale, including electronics, gadgets, and accessories.</dd>
+        <div>
+            <dl>
+                <dt>Sell Items</dt>
+                <dd>We offer a wide range of items for sale, including electronics, gadgets, and accessories.</dd>
 
-            <dt>PC Installation</dt>
-            <dd>We provide professional installation services for personal computers, ensuring they are set up correctly
-                and ready for use.</dd>
+                <dt>PC Installation</dt>
+                <dd>We provide professional installation services for personal computers, ensuring they are set up
+                    correctly
+                    and ready for use.</dd>
 
-            <dt>Computer Repair</dt>
-            <dd>Our experienced technicians are skilled in diagnosing and fixing a variety of computer issues, from
-                software problems to hardware malfunctions.</dd>
-        </dl>
-</div>
-    </main>
+                <dt>Computer Repair</dt>
+                <dd>Our experienced technicians are skilled in diagnosing and fixing a variety of computer issues, from
+                    software problems to hardware malfunctions.</dd>
+            </dl>
+        </div>
 
+    </div>
+    <div style="padding-bottom: 16%;" class="car-features">
+        <h2>Product types</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <ul>
+                    <li><strong>Desktop Computer:</strong> Powerful desktop computers for gaming and productivity</li>
+                    <li><strong>Accessories:</strong> Keyboards, mice, headphones, and other peripherals...etc</li>
+                    <li><strong>Wires and Cables:</strong> Various types of wires and cables for connectivity.</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li><strong>Laptop Computers:</strong> Portable and powerful laptops for work and entertainment</li>
+                    <li><strong>Smartphones:</strong> Latest smartphones with advanced features and technology</li>
+                    <li><strong>PC Parts:</strong> Various components including CPUs, GPUs, RAM, and storage</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="footer-container">
             <div class="logo-social">
@@ -122,6 +152,7 @@
             </div>
         </div>
     </footer>
+
 </body>
 
 </html>
