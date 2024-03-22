@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #d1f3e7;
+    background-color: hsl(158, 75%, 60%);
 
     font-family: Arial, sans-serif;
     margin: 0;
@@ -103,11 +103,17 @@ main {
 footer {
 background-color: #333;
     color: #fff;
-    padding: 20px;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  padding: 40px 80px;
+  margin-top: 50px;
+    text-align: center;
 }
 
 .footer-container {
@@ -148,4 +154,23 @@ background-color: #333;
 .contact-info p {
     margin-bottom: 5px;
 }
+.car-features ul {
+    list-style-type: none;
+    padding-left: 0;
+}
 
+.car-features li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.car-features li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.car-features strong {
+    font-weight: bold;
+    color: #007bff; /* Change color as needed */
+}
