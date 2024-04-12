@@ -53,6 +53,34 @@
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        .img-container1 {
+      align-content: center;
+      width: auto;
+      height: 500px;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 1s ease-in-out;
+  }
+  .banner {
+      background-color: #c7c7c7; /* Set the background color */
+      color: #000000; /* Set the text color */
+      
+      text-align: center; /* Center-align text */
+      font-size: 18px; /* Set the font size */
+      font-weight: bold; /* Set font weight to bold */
+      position: relative;
+      
+      animation: moveLeft 16s linear infinite; /* Set the animation properties */
+    }
+    
+    @keyframes moveLeft {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
     </style>
 </head>
 
@@ -82,11 +110,14 @@
 
     </header>
     <div class="progress">
-         <div class="progress-bar" style="width:100%"></div> </div>
+         <div class="progress-bar" style="width:100%"><div class="banner" id="bannerText">
+            Welcome to the AutoCars website! Today is <span id="datetime" ></span>
+          </div></div> </div>
     <div>
+        
         <h1>Welcome to PC Store</h1>
-        <div style="text-align: center;">
-            <a href="products.html"><img src="save.jpg" alt=""></a>
+        <div class="img-container1" style="align-content: center; background-image:url(save.jpg); padding: 170px; background-position: center;background-repeat: no-repeat;">
+            
         </div>
 
         <h1>Our Services</h1>
@@ -153,6 +184,39 @@
             </div>
         </div>
     </footer>
+    <script>
+
+
+        // Function to update current date and time
+        function updateDateTime() {
+              // create a new Date object
+              const now = new Date();
+      
+              
+              const currentDateTime = now.toLocaleString();
+      
+              
+              document.querySelector('#datetime').textContent = currentDateTime;
+            }
+      
+            
+            setInterval(updateDateTime, 1000);
+      
+      
+        document.addEventListener("DOMContentLoaded", function () {
+            var imageContainer = document.querySelector(".img-container1");
+            var images = ["ddd2.jpeg", "did1.jpeg", "ddd4.avif"];
+            var currentIndex = 0;
+      
+            function changeBackgroundImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                var imageUrl = images[currentIndex];
+                imageContainer.style.backgroundImage = "url(" + imageUrl + ")";
+            }
+      
+            setInterval(changeBackgroundImage, 5000); // Change image every 5 seconds (adjust as needed)
+        });
+      </script>
 
 </body>
 
