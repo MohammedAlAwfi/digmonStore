@@ -34,7 +34,7 @@
         <center>
         <div class="login-container">
             <h2>Sign Up</h2>
-            <form action="#" method="POST" class="login-form">
+            <form action="#" method="POST" class="login-form" onsubmit="validateForm(event)">
                 <div class="form-group">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" required>
@@ -75,6 +75,8 @@
                     <li><a href="products.html">Products</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="Questionnaire.html">Questionnaire</a></li>
+
                 </ul>
             </div>
             <div class="contact-info">
@@ -84,6 +86,42 @@
             </div>
         </div>
     </footer>
+    <script>
+    function validateForm(event) {
+        var username = document.getElementById('username').value;
+        var email = document.getElementById('Email').value;
+        var password = document.getElementById('password').value;
+        var phone = document.getElementById('Phone').value;
+
+        // Username validation
+        if (!/^[a-zA-Z]+$/.test(username)) {
+            event.preventDefault();
+            alert('Username can only contain alphabetical characters.');
+            return;
+        }
+
+        // Email validation
+        if (!/\S+@\S+\.\S+/.test(email)) {
+            event.preventDefault();
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        // Password validation
+        if (!/(?=.*[A-Z])(?=.*[!@#$%^&*])/.test(password)) {
+            event.preventDefault();
+            alert('Password must contain at least one uppercase letter and one special character.');
+            return;
+        }
+
+        // Phone number validation
+        if (phone.length !== 8 || isNaN(phone)) {
+            event.preventDefault();
+            alert('Phone number must be 8 digits.');
+            return;
+        }
+    }
+    </script>
 
 
 </body>
