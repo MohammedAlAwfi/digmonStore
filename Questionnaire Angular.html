@@ -161,29 +161,34 @@
     <!-- Include Angular scripts here -->
     <script src="angular.js"></script>
     <script>
-        // Define Angular app and controller
-        var app = angular.module('questionnaireApp', []);
-        app.controller('QuestionnaireController', function ($scope) {
-            $scope.formData = {
-                name: '',
-                gender: '',
-                interests: {
-                    sports: false,
-                    gaming: false,
-                    music: false,
-                    art: false
-                },
-                feedback: '',
-                rating: ''
-            };
+    // Define an AngularJS app named 'questionnaireApp'
+    var app = angular.module('questionnaireApp', []);
 
-            $scope.validateForm = function () {
-                // Validation logic here
-                // You can access form data using $scope.formData
-                console.log('Form submitted:', $scope.formData);
-            };
-        });
-    </script>
+    // Define a controller named 'QuestionnaireController' within the 'questionnaireApp' module
+    app.controller('QuestionnaireController', function ($scope) {
+        // Initialize form data with empty values
+        $scope.formData = {
+            name: '', // Placeholder for name input
+            gender: '', // Placeholder for gender input
+            interests: { // Placeholder for interests checkboxes
+                sports: false,
+                gaming: false,
+                music: false,
+                art: false
+            },
+            feedback: '', // Placeholder for feedback textarea
+            rating: '' // Placeholder for rating input
+        };
+
+        // Function to validate form data when submitted
+        $scope.validateForm = function () {
+            // Validation logic can be implemented here
+            // Access form data using $scope.formData
+            console.log('Form submitted:', $scope.formData); // Log form data to console
+        };
+    });
+</script>
+
 </body>
 
 </html>
