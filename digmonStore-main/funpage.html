@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Store - Fun Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* Add any custom styles for the fun page here */
+        #game-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .component {
+            width: 100px; /* Adjust size as needed */
+            height: 100px; /* Adjust size as needed */
+            background-size: cover;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .component-name {
+            width: 100px; /* Adjust size as needed */
+            text-align: center;
+            margin-top: 10px;
+            border: 2px solid #ccc;
+            padding: 10px;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #coupon {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        #instructions {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.jpeg" alt="PC Store" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+                <li class="nav-item"><a class="nav-link" href="Questionnaire.html">Questionnaire</a></li>
+                <li class="nav-item"><a class="nav-link active" href="Calculater.html">Calculater</a></li>
+                <li class="nav-item"><a class="nav-link active" href="funpage.html">Funpage</a></li>
+
+                <li class="login"><a href="login.html"><img src="login.png" alt="Login"></a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Welcome to PC Store - Fun Page</h1>
+        <div id="game-container"></div>
+        <div id="message"></div>
+        <div id="coupon"></div>
+        <div id="instructions">
+            <h2>How to Play</h2>
+            <p>Drag each image representing a PC component to its correct name.</p>
+            <p>If you correctly match all components, you win the game!</p>
+        </div>
+        <button onclick="resetGame()" class="btn btn-primary mt-3">Reset Game</button>
+        <button id="try-again" style="display:none" onclick="tryAgain()" class="btn btn-primary mt-3">Try Again</button>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="logo-social">
+                <img src="logo.jpeg" alt="PC Store">
+                <div class="social-links">
+                    <a href="https://www.youtube.com/"><img src="snapchat.png" alt="Facebook"></a>
+                    <a href="https://twitter.com/imm0hd"><img src="x.jpg" alt="x"></a>
+                    <a href="https://www.instagram.com/im.m0hd/"><img src="instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="funpage.html">Fun Page</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Info</h3>
+                <p>Email: <a href="mailto:contact@pcstore.com">contact@pcstore.com</a></p>
+                <p>Phone: 123-456-7890</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const components = [
+            { name: 'Motherboard', image: 'motherboard.jpg' },
+            { name: 'Keyboard', image: 'keyboard.jpeg' },
+            { name: 'Mouse', image: 'mouse.jpeg' },
+            { name: 'CPU', image: 'cpu.jpg' },
+            { name: 'Graphics Card', image: 'graphics-card.jpg' },
+            { name: 'RAM', image: 'ram.jpeg' },
+            { name: 'Power Supply', image: 'power-supply.jpg' },
+            { name: 'Hard Drive', image: 'hard-drive.jpg' },
+            { name: 'SSD', image: 'ssd.jpg' },
+            { name: 'Case', image: 'case.jpg' }
+        ];
+
+        let shuffledComponents;
+        let shuffledNames;
+
+        // Create game board
+        function createGame() {
+            shuffledComponents = shuffleArray(components);
+            shuffledNames = shuffleArray(components.map(component => component.name));
+
+            const gameContainer = document.getElementById('game-container');
+            gameContainer.innerHTML = '';
+
+            shuffledComponents.forEach((component, index) => {
+                const componentDiv = document.createElement('div');
+                componentDiv.classList.add('component');
+                componentDiv.style.backgroundImage = `url('${component.image}')`;
+                componentDiv.setAttribute('data-component', component.name);
+                componentDiv.setAttribute('draggable', 'true');
+                componentDiv.addEventListener('dragstart', handleDragStart);
+                gameContainer.appendChild(componentDiv);
+
+                const componentName = document.createElement('div');
+                componentName.classList.add('component-name');
+                componentName.innerText = shuffledNames[index];
+                componentName.setAttribute('data-name', shuffledNames[index]);
+                componentName.setAttribute('droppable', 'true');
+                componentName.addEventListener('dragover', handleDragOver);
+                componentName.addEventListener('drop', handleDrop);
+                gameContainer.appendChild(componentName);
+            });
+        }
+
+        let matchedComponents = 0;
+
+        function handleDragStart(event) {
+            event.dataTransfer.setData('text', event.target.getAttribute('data-component'));
+        }
+
+        function handleDragOver(event) {
+            event.preventDefault();
+        }
+
+        function handleDrop(event) {
+            event.preventDefault();
+            const componentName = event.target.getAttribute('data-name');
+            const draggedComponent = event.dataTransfer.getData('text');
+
+            if (componentName === draggedComponent) {
+                event.target.innerText = componentName;
+                event.target.style.border = '2px solid green';
+                matchedComponents++;
+
+                if (matchedComponents === components.length) {
+                    displayMessage('Congratulations! You matched all components.');
+                    displayCoupon();
+                    document.getElementById('try-again').style.display = 'block';
+                }
+            } else {
+                event.target.style.border = '2px solid red';
+            }
+        }
+
+        function displayMessage(message) {
+            document.getElementById('message').innerText = message;
+        }
+
+        function displayCoupon() {
+            const couponDiv = document.getElementById('coupon');
+            couponDiv.style.display = 'block';
+            couponDiv.innerHTML = 'You win a 10% discount coupon! Use code: COMPONENT10';
+        }
+
+        function resetGame() {
+            matchedComponents = 0;
+            createGame();
+            document.getElementById('message').innerText = '';
+            document.getElementById('coupon').style.display = 'none';
+            document.getElementById('try-again').style.display = 'none';
+        }
+
+        function tryAgain() {
+            resetGame();
+        }
+
+        // Shuffle array function
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Initial game creation
+        createGame();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - PC Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- This line includes the Bootstrap JavaScript bundle (bootstrap.bundle.min.js) from the CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(159, 75%, 87%);
+
+        }
+
+        .container {
+            margin:  auto;
+            padding-bottom: 160px;
+            background-color: #b86262;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .pc-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .pc-type {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #0a0808;
+        }
+
+        .pc-type a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+
+        .pc-image {
+            max-width: 100px;
+            margin: 0 auto;
+        }
+
+        .price {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #007bff;
+        }
+
+        .add-to-cart {
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #0056b3;
+        }
+    
+    #request tr {
+        padding: 10px 0; /* Add top and bottom padding */
+    }
+    #request td, #request th {
+        padding: 10px; /* Add padding to each cell */
+    }
+    input, button {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <header>
+    <div class="logo">
+        <a class="navbar-brand" href="index.html">
+            <img src="logo.jpeg" alt="PC Store" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+            <li class="nav-item"><a class="nav-link" href="Questionnaire.html">Questionnaire</a></li>
+            <li class="nav-item"><a class="nav-link active" href="Calculater.html">Calculater</a></li>
+            <li class="nav-item"><a class="nav-link active" href="funpage.html">Funpage</a></li>
+
+            <li class="login"><a href="login.html"><img src="login.png" alt="Login"></a></li>
+
+        </ul>
+    </nav>
+
+</header>
+<div class="progress">
+    <div class="progress-bar" style="width:100%"></div> </div>
+<div>
+    <div class="container mt-5" style="background-color: grey;">
+        <h1>Available PC Parts and Accessories</h1>
+        <table class="pc-table">
+            <tr>
+                <td class="pc-type">
+                    <a href="#" id="KeyLink">
+                        <img src="key.png" alt="Key" class="pc-image">
+                        <h3>Keyboard</h3>
+                        <p class="price">$59.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+                <td class="pc-type">
+                    <a href="#" id="motherboardLink">
+                        <img src="mother.png" alt="Motherboard" class="pc-image">
+                        <h3>Motherboard</h3>
+                        <p class="price">$149.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+                <td class="pc-type">
+                    <a href="#" id="coolerLink">
+                        <img src="cooler.png" alt="Cooler" class="pc-image">
+                        <h3>Cooler</h3>
+                        <p class="price">$199.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="pc-type">
+                    <a href="#" id="storageLink">
+                        <img src="storage.png" alt="Storage" class="pc-image">
+                        <h3>Storage</h3>
+                        <p class="price">$99.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+                <td class="pc-type">
+                    <a href="#" id="MonitorLink">
+                        <img src="motors.png" alt="Monitor" class="pc-image">
+                        <h3>Monitor</h3>
+                        <p class="price">$249.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+                <td class="pc-type">
+                    <a href="#" id="laptop">
+                        <img src="laptop.png" alt="laptop" class="pc-image">
+                        <h3>Laptop Gaming</h3>
+                        <p class="price">$699.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="pc-type">
+                    <a href="#" id="processerLink">
+                        <img src="processer.png" alt="processer" class="pc-image">
+                        <h3>processer</h3>
+                        <p class="price">$199.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+                <td class="pc-type">
+                    <a href="#" id="WifiLink">
+                        <img src="Wifi.jpg" alt="Wifi" class="pc-image">
+                        <h3>Wifi Adapter</h3>
+                        <p class="price">$29.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+                <td class="pc-type">
+                    <a href="#" id="graphic">
+                        <img src="graphic.png" alt="graphic" class="pc-image">
+                        <h3>graphic card </h3>
+                        <p class="price">$699.99</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Display Table 2 -->
+<h2>Request Items</h2>
+<table id="request" border="border">
+    <thead>
+        <tr>
+            <th>type</th>
+            <th>price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Table will be dynamically filled using JavaScript -->
+    </tbody>
+</table>
+
+<!-- Form to add a new request -->
+<h2>Add a New Request</h2>
+<form id="addReqs">
+    <label for="type">type:</label>
+    <input type="text" id="type" name="type" required>
+
+    <label for="price">price:</label>
+    <input type="text" id="price" name="price" required>
+
+    <button type="button" style="margin-top: 5%; margin-bottom: 5%;" onclick="addReq()">Add Request</button>
+</form>
+<h2>Search for Information</h2>
+<form id="searchForm">
+    <label for="searchTerm">Search Term:</label>
+    <input type="text" id="searchTerm" required>
+    <button type="button" onclick="searchInformation()">Search</button>
+</form>
+
+<div id="searchResults" style="margin-bottom: 20%;">
+    <!-- This is where the search results will be displayed -->
+</div>
+<footer>
+    <div class="footer-container">
+        <div class="logo-social">
+            <img src="logo.jpeg" alt="Digimon Store">
+            <div class="social-links">
+                <a href="https://www.youtube.com/"><img src="snapchat.png" alt="Facebook"></a>
+                <a href="https://twitter.com/imm0hd"><img src="x.jpg" alt="x"></a>
+                <a href="https://www.instagram.com/im.m0hd/"><img src="instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Info</h3>
+            <p>Email: <a href="mailto: s139265@student.squ.edu.om">contact@digimonstore.com</a></p>
+            <p>Phone: 79206504</p>
+        </div>
+    </div>
+</footer>
+<script>
+    // Array to hold request items
+    const requestsArray = [];
+
+    // Function to add a new request
+    function addReq() {
+        // Get the values from the form inputs
+        const type = document.getElementById('type').value;
+        const price = document.getElementById('price').value;
+
+        // Create a new request object
+        const newRequest = {
+            type: type,
+            price: price
+        };
+
+        // Add the new request to the array
+        requestsArray.push(newRequest);
+
+        // Display the requests in the table
+        displayRequests(requestsArray);
+
+        // Clear form inputs after adding the new request
+        document.getElementById('addReqs').reset();
+    }
+
+    // Function to display requests in the table
+    function displayRequests(requests) {
+        // Get the table body element
+        const tableBody = document.querySelector('#request tbody');
+
+        // Clear existing rows in the table
+        tableBody.innerHTML = '';
+
+        // Loop through the requests array
+        requests.forEach(request => {
+            // Create a new row element
+            const newRow = document.createElement('tr');
+
+            // Create cells for type and price
+            const typeCell = document.createElement('td');
+            typeCell.textContent = request.type;
+
+            const priceCell = document.createElement('td');
+            priceCell.textContent = request.price;
+
+            // Append cells to the new row
+            newRow.appendChild(typeCell);
+            newRow.appendChild(priceCell);
+
+            // Append the new row to the table body
+            tableBody.appendChild(newRow);
+        });
+    }
+    function searchInformation() {
+    // Get the search term from the input field and convert it to lowercase for case-insensitive comparison
+    const searchTerm = document.getElementById("searchTerm").value.toLowerCase();
+
+    // Get all rows from the table
+    const rows = document.querySelectorAll('.pc-table tr');
+
+    // Create an array to store the search results
+    let searchResults = [];
+
+    // Loop through each row in the table
+    rows.forEach(row => {
+        // Get all the cells in the current row
+        const cells = row.querySelectorAll('.pc-type');
+
+        // Loop through each cell
+        cells.forEach(cell => {
+            // Get the item name and price
+            const itemName = cell.querySelector('h3').textContent.toLowerCase();
+            const itemPrice = cell.querySelector('.price').textContent;
+
+            // Check if the search term is in the item name or price
+            if (itemName.includes(searchTerm) || itemPrice.toLowerCase().includes(searchTerm)) {
+                // If it matches, add the item name and price to the search results array
+                searchResults.push({
+                    name: itemName,
+                    price: itemPrice
+                });
+            }
+        });
+    });
+
+    // Get the search results container
+    const searchResultsDiv = document.getElementById('searchResults');
+    
+    // Display the search results
+    if (searchResults.length > 0) {
+        // Create a list of the search results
+        const resultsList = searchResults.map(result => {
+            return `<p>${result.name} - ${result.price}</p>`;
+        }).join('');
+
+        // Display the search results in the search results container
+        searchResultsDiv.innerHTML = `<h3>Search Results:</h3>${resultsList}`;
+    } else {
+        // If no matches found, clear the search results container
+        searchResultsDiv.innerHTML = '<p>No matching items found.</p>';
+    }
+
+    // Reset the search term input field
+    document.getElementById('searchTerm').value = '';
+}
+
+
+
+</script>
+
+</body>
+</html>
