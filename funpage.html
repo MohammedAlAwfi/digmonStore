@@ -127,114 +127,130 @@
     </footer>
 
     <script>
-        const components = [
-            { name: 'Motherboard', image: 'motherboard.jpg' },
-            { name: 'Keyboard', image: 'keyboard.jpeg' },
-            { name: 'Mouse', image: 'mouse.jpeg' },
-            { name: 'CPU', image: 'cpu.jpg' },
-            { name: 'Graphics Card', image: 'graphics-card.jpg' },
-            { name: 'RAM', image: 'ram.jpeg' },
-            { name: 'Power Supply', image: 'power-supply.jpg' },
-            { name: 'Hard Drive', image: 'hard-drive.jpg' },
-            { name: 'SSD', image: 'ssd.jpg' },
-            { name: 'Case', image: 'case.jpg' }
-        ];
+    // Array of components with names and images
+    const components = [
+        { name: 'Motherboard', image: 'motherboard.jpg' },  // Component: Motherboard
+        { name: 'Keyboard', image: 'keyboard.jpeg' },       // Component: Keyboard
+        { name: 'Mouse', image: 'mouse.jpeg' },             // Component: Mouse
+        { name: 'CPU', image: 'cpu.jpg' },                  // Component: CPU
+        { name: 'Graphics Card', image: 'graphics-card.jpg' }, // Component: Graphics Card
+        { name: 'RAM', image: 'ram.jpeg' },                 // Component: RAM
+        { name: 'Power Supply', image: 'power-supply.jpg' },  // Component: Power Supply
+        { name: 'Hard Drive', image: 'hard-drive.jpg' },     // Component: Hard Drive
+        { name: 'SSD', image: 'ssd.jpg' },                  // Component: SSD
+        { name: 'Case', image: 'case.jpg' }                 // Component: Case
+    ];
 
-        let shuffledComponents;
-        let shuffledNames;
+    let shuffledComponents; // Array to store shuffled components
+    let shuffledNames;      // Array to store shuffled component names
 
-        // Create game board
-        function createGame() {
-            shuffledComponents = shuffleArray(components);
-            shuffledNames = shuffleArray(components.map(component => component.name));
+    // Function to create the game board
+    function createGame() {
+        // Shuffle the components and names arrays
+        shuffledComponents = shuffleArray(components);
+        shuffledNames = shuffleArray(components.map(component => component.name));
 
-            const gameContainer = document.getElementById('game-container');
-            gameContainer.innerHTML = '';
+        // Clear the game container
+        const gameContainer = document.getElementById('game-container');
+        gameContainer.innerHTML = '';
 
-            shuffledComponents.forEach((component, index) => {
-                const componentDiv = document.createElement('div');
-                componentDiv.classList.add('component');
-                componentDiv.style.backgroundImage = `url('${component.image}')`;
-                componentDiv.setAttribute('data-component', component.name);
-                componentDiv.setAttribute('draggable', 'true');
-                componentDiv.addEventListener('dragstart', handleDragStart);
-                gameContainer.appendChild(componentDiv);
+        // Iterate through shuffledComponents array
+        shuffledComponents.forEach((component, index) => {
+            // Create a div for each component with its image as background
+            const componentDiv = document.createElement('div');
+            componentDiv.classList.add('component');
+            componentDiv.style.backgroundImage = `url('${component.image}')`;
+            componentDiv.setAttribute('data-component', component.name);
+            componentDiv.setAttribute('draggable', 'true');
+            componentDiv.addEventListener('dragstart', handleDragStart);
+            gameContainer.appendChild(componentDiv);
 
-                const componentName = document.createElement('div');
-                componentName.classList.add('component-name');
-                componentName.innerText = shuffledNames[index];
-                componentName.setAttribute('data-name', shuffledNames[index]);
-                componentName.setAttribute('droppable', 'true');
-                componentName.addEventListener('dragover', handleDragOver);
-                componentName.addEventListener('drop', handleDrop);
-                gameContainer.appendChild(componentName);
-            });
-        }
+            // Create a div for the name of each component
+            const componentName = document.createElement('div');
+            componentName.classList.add('component-name');
+            componentName.innerText = shuffledNames[index];
+            componentName.setAttribute('data-name', shuffledNames[index]);
+            componentName.setAttribute('droppable', 'true');
+            componentName.addEventListener('dragover', handleDragOver);
+            componentName.addEventListener('drop', handleDrop);
+            gameContainer.appendChild(componentName);
+        });
+    }
 
-        let matchedComponents = 0;
+    let matchedComponents = 0; // Counter for matched components
 
-        function handleDragStart(event) {
-            event.dataTransfer.setData('text', event.target.getAttribute('data-component'));
-        }
+    // Function to handle drag start event
+    function handleDragStart(event) {
+        event.dataTransfer.setData('text', event.target.getAttribute('data-component'));
+    }
 
-        function handleDragOver(event) {
-            event.preventDefault();
-        }
+    // Function to handle drag over event
+    function handleDragOver(event) {
+        event.preventDefault();
+    }
 
-        function handleDrop(event) {
-            event.preventDefault();
-            const componentName = event.target.getAttribute('data-name');
-            const draggedComponent = event.dataTransfer.getData('text');
+    // Function to handle drop event
+    function handleDrop(event) {
+        event.preventDefault();
+        const componentName = event.target.getAttribute('data-name');
+        const draggedComponent = event.dataTransfer.getData('text');
 
-            if (componentName === draggedComponent) {
-                event.target.innerText = componentName;
-                event.target.style.border = '2px solid green';
-                matchedComponents++;
+        // Check if the dropped component matches the name
+        if (componentName === draggedComponent) {
+            event.target.innerText = componentName;
+            event.target.style.border = '2px solid green';
+            matchedComponents++;
 
-                if (matchedComponents === components.length) {
-                    displayMessage('Congratulations! You matched all components.');
-                    displayCoupon();
-                    document.getElementById('try-again').style.display = 'block';
-                }
-            } else {
-                event.target.style.border = '2px solid red';
+            // Check if all components are matched
+            if (matchedComponents === components.length) {
+                displayMessage('Congratulations! You matched all components.');
+                displayCoupon();
+                document.getElementById('try-again').style.display = 'block';
             }
+        } else {
+            event.target.style.border = '2px solid red';
         }
+    }
 
-        function displayMessage(message) {
-            document.getElementById('message').innerText = message;
-        }
+    // Function to display a message
+    function displayMessage(message) {
+        document.getElementById('message').innerText = message;
+    }
 
-        function displayCoupon() {
-            const couponDiv = document.getElementById('coupon');
-            couponDiv.style.display = 'block';
-            couponDiv.innerHTML = 'You win a 10% discount coupon! Use code: COMPONENT10';
-        }
+    // Function to display a coupon
+    function displayCoupon() {
+        const couponDiv = document.getElementById('coupon');
+        couponDiv.style.display = 'block';
+        couponDiv.innerHTML = 'You win a 10% discount coupon! Use code: COMPONENT10';
+    }
 
-        function resetGame() {
-            matchedComponents = 0;
-            createGame();
-            document.getElementById('message').innerText = '';
-            document.getElementById('coupon').style.display = 'none';
-            document.getElementById('try-again').style.display = 'none';
-        }
-
-        function tryAgain() {
-            resetGame();
-        }
-
-        // Shuffle array function
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
-        // Initial game creation
+    // Function to reset the game
+    function resetGame() {
+        matchedComponents = 0;
         createGame();
-    </script>
+        document.getElementById('message').innerText = '';
+        document.getElementById('coupon').style.display = 'none';
+        document.getElementById('try-again').style.display = 'none';
+    }
+
+    // Function to try the game again
+    function tryAgain() {
+        resetGame();
+    }
+
+    // Function to shuffle an array
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Initial game creation
+    createGame();
+</script>
+
 </body>
 
 </html>
