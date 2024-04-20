@@ -85,7 +85,7 @@
                 <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
                 <li class="nav-item"><a class="nav-link" href="Questionnaire.html">Questionnaire</a></li>
                 <li class="nav-item"><a class="nav-link active" href="Calculater.html">Calculater</a></li>
-                <li class="nav-item"><a class="nav-link active" href="funpage.html">Funpage</a></li>
+                <li class="nav-item"><a class="nav-link" href="funpage.html">Funpage</a></li>
 
                 <li class="login"><a href="login.html"><img src="login.png" alt="Login"></a></li>
 
@@ -157,23 +157,32 @@
 
     <script>
         function calculateTotal() {
+            // Get all the checkboxes with the name "parts"
             const checkboxes = document.getElementsByName("parts");
+            // Get all the input fields with the name "quantity"
             const quantities = document.getElementsByName("quantity");
+           // Get the value of the input field with the name "promotionCode"
             const promotionCode = document.getElementsByName("promotionCode")[0].value;
             let totalCost = 0;
 
+            // Iterate over each checkbox
             for (let i = 0; i < checkboxes.length; i++) {
+                // Check if the checkbox is checked
                 if (checkboxes[i].checked) {
+                    // Get the price value from the checkbox
                     const price = parseFloat(checkboxes[i].value);
+                    // Get the quantity value from the corresponding input field
                     const quantity = parseInt(quantities[i].value);
+
+                    // Calculate the cost for the current checkbox
                     totalCost += price * quantity;
                 }
             }
-
+            // Check if the promotion code valid
             if (promotionCode.match(/SQU\d{6}/)) {
                 totalCost *= 0.9; // Apply 10% discount
             }
-
+            // Update the text content of the element with id "totalCost" to display the calculated total cost
             document.getElementById("totalCost").textContent = "Total Cost: $" + totalCost.toFixed(2);
         }
     </script>
