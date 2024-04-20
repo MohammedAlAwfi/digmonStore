@@ -171,39 +171,47 @@
     </footer>
 
     <script>
-        angular.module('digimonStoreApp', [])
-            .controller('CalculationController', function() {
-                var vm = this;
-                vm.parts = [
-                    { name: 'Processor', price: 199.99, quantity: 1, checked: false },
-                    { name: 'Wifi Adapter', price: 29.99, quantity: 1, checked: false },
-                    { name: 'Graphic Card', price: 699.99, quantity: 1, checked
+    // Define an AngularJS module named 'digimonStoreApp'
+    angular.module('digimonStoreApp', [])
+        // Define a controller named 'CalculationController' within the module
+        .controller('CalculationController', function() {
+            // Create a reference to 'this' for the controller
+            var vm = this;
+            // Array of parts with their names, prices, quantities, and checked status
+            vm.parts = [
+                { name: 'Processor', price: 199.99, quantity: 1, checked: false }, // Part: Processor
+                { name: 'Wifi Adapter', price: 29.99, quantity: 1, checked: false }, // Part: Wifi Adapter
+                { name: 'Graphic Card', price: 699.99, quantity: 1, checked: false }, // Part: Graphic Card
+                { name: 'Storage', price: 99.99, quantity: 1, checked: false }, // Part: Storage
+                { name: 'Monitor', price: 249.99, quantity: 1, checked: false }, // Part: Monitor
+                { name: 'Laptop', price: 699.99, quantity: 1, checked: false }, // Part: Laptop
+                { name: 'Keyboard', price: 59.99, quantity: 1, checked: false }, // Part: Keyboard
+                { name: 'Motherboard', price: 149.99, quantity: 1, checked: false }, // Part: Motherboard
+                { name: 'Cooler', price: 199.99, quantity: 1, checked: false } // Part: Cooler
+            ];
 
-: false },
-                    { name: 'Storage', price: 99.99, quantity: 1, checked: false },
-                    { name: 'Monitor', price: 249.99, quantity: 1, checked: false },
-                    { name: 'Laptop', price: 699.99, quantity: 1, checked: false },
-                    { name: 'Keyboard', price: 59.99, quantity: 1, checked: false },
-                    { name: 'Motherboard', price: 149.99, quantity: 1, checked: false },
-                    { name: 'Cooler', price: 199.99, quantity: 1, checked: false }
-                ];
-                
+            // Initialize total cost to 0
+            vm.totalCost = 0;
+
+            // Function to calculate total cost based on checked parts and quantities
+            vm.calculateTotal = function() {
                 vm.totalCost = 0;
-
-                vm.calculateTotal = function() {
-                    vm.totalCost = 0;
-                    angular.forEach(vm.parts, function(part) {
-                        if (part.checked) {
-                            vm.totalCost += part.price * part.quantity;
-                        }
-                    });
-
-                    if (vm.promotionCode && vm.promotionCode.match(/SQU\d{6}/)) {
-                        vm.totalCost *= 0.9; // Apply 10% discount
+                // Iterate through each part
+                angular.forEach(vm.parts, function(part) {
+                    // If the part is checked, add its price multiplied by quantity to total cost
+                    if (part.checked) {
+                        vm.totalCost += part.price * part.quantity;
                     }
-                };
-            });
-    </script>
+                });
+
+                // Check if there's a promotion code and it matches a specific pattern (SQU followed by 6 digits)
+                if (vm.promotionCode && vm.promotionCode.match(/SQU\d{6}/)) {
+                    vm.totalCost *= 0.9; // Apply 10% discount
+                }
+            };
+        });
+</script>
+
 </body>
 
 </html>
