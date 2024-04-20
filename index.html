@@ -197,14 +197,14 @@
               // create a new Date object
               const now = new Date();
       
-              
+              // Get the current date and time as a string
               const currentDateTime = now.toLocaleString();
       
-              
+             // Update the text content of the element with id 'datetime' to display the current date and time
               document.querySelector('#datetime').textContent = currentDateTime;
             }
       
-            
+            // Call the updateDateTime function every 1000 milliseconds (1 second)
             setInterval(updateDateTime, 1000);
       
       
@@ -212,10 +212,13 @@
             var imageContainer = document.querySelector(".img-container1");
             var images = ["ddd2.jpeg", "did1.jpeg", "ddd4.avif"];
             var currentIndex = 0;
-      
+              
+            // Function to change the background image
             function changeBackgroundImage() {
+                // Calculate the index of the next image to be displayed
                 currentIndex = (currentIndex + 1) % images.length;
                 var imageUrl = images[currentIndex];
+                // Set the background image of the image container to the new image URL
                 imageContainer.style.backgroundImage = "url(" + imageUrl + ")";
             }
       
