@@ -47,7 +47,7 @@
         <div class="progress-bar" style="width:100%"></div> </div>
       <div class="container">
         <h1>Customer Questionnaire</h1>
-        <form id="questionnaireForm" onsubmit="validateForm(event)">
+        <form id="questionnaireForm" action="proccess_questionnaire.php" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             
@@ -56,19 +56,19 @@
                 <label><input type="radio" name="gender" value="male"> Male</label>
                 <label><input type="radio" name="gender" value="female"> Female</label>
             </div>
-
+        
             <label>Interests:</label>
             <div class="checkbox-group">
-                <label><input type="checkbox" name="interests" value="sports"> Sports</label>
-                <label><input type="checkbox" name="interests" value="gaming"> Gaming</label>
-                <label><input type="checkbox" name="interests" value="music"> Music</label>
-                <label><input type="checkbox" name="interests" value="art"> Art</label>
-
+                
+                <label><input type="checkbox" name="interests[]" value="sports"> Sports</label>
+                <label><input type="checkbox" name="interests[]" value="gaming"> Gaming</label>
+                <label><input type="checkbox" name="interests[]" value="music"> Music</label>
+                <label><input type="checkbox" name="interests[]" value="art"> Art</label>
             </div>
-
+        
             <label for="feedback">Feedback:</label>
             <textarea id="feedback" name="feedback" rows="4" required></textarea>
-
+        
             <label for="rating">Rating:</label>
             <select id="rating" name="rating" required>
                 <option value="" disabled selected>Select rating</option>
@@ -76,7 +76,7 @@
                 <option value="good">Good</option>
                 <option value="average">Average</option>
             </select>
-
+        
             <button type="submit">Submit</button>
         </form>
     </div>
