@@ -97,7 +97,7 @@
 
     <div class="container" ng-app="questionnaireApp" ng-controller="QuestionnaireController">
         <h1>Customer Questionnaire</h1>
-        <form #questionnaireForm (ngSubmit)="validateForm()">
+        <form action="proccess_questionnaire.php" #questionnaireForm (ngSubmit)="validateForm()"> 
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required [(ngModel)]="formData.name">
             
