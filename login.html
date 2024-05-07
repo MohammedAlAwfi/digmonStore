@@ -40,7 +40,8 @@
         <center>
         <div class="login-container">
             <h2>Sign Up</h2>
-            <form action="process_login.php" method="POST" class="login-form">
+          <form action="proccess_login.php" method="POST" class="login-form" onsubmit="validateForm(event)">
+
               <div class="form-group">
                   <label for="username">Username:</label>
                   <input type="text" id="username" name="username" required>
